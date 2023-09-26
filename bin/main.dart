@@ -1,14 +1,14 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:sample_009_documentai/commands/commands.dart';
+import 'package:dart_documentai_samples/commands/commands.dart';
 
 void main(List<String> arguments) {
   final runner = CommandRunner(
       'documentai', 'Document AI Sample CLI Tool for Dart Developers')
     ..addCommand(ListProcessorTypes())
     ..addCommand(CreateProcessor())
-    ..addCommand(ProcessDocument());
+    ..addCommand(ProcessDocumentFormParser());
 
   runner.run(arguments).catchError((error) {
     if (error is! UsageException) throw error;

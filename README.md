@@ -1,6 +1,6 @@
 # A Document AI Sample CLI Tool for Dart Developers
 
-This project is a personal initiative to showcase the capabilities of the Dart language in building applications that interact with Google Cloud services. The core of this project revolves around demonstrating how Dart can be seamlessly integrated with Google Cloud's DocumentAI. As a hands-on example, it provides Dart developers with practical insights into processing, managing, and leveraging DocumentAI's powerful features within a Dart-centric workflow. Please note that this is a work-in-progress, and contributions to enhance its offerings are warmly welcomed. For a glimpse of the roadmap, refer to the TODOs section below.
+**DartDocumentAISamples**  is a personal initiative to showcase the capabilities of the Dart language in building applications that interact with Google Cloud services. The core of this project revolves around demonstrating how Dart can be seamlessly integrated with Google Cloud's DocumentAI. As a hands-on example, it provides Dart developers with practical insights into processing, managing, and leveraging DocumentAI's powerful features within a Dart-centric workflow. Please note that this is a work-in-progress, and contributions to enhance its offerings are warmly welcomed. For a glimpse of the roadmap, refer to the TODOs section below.
 
 ## Prerequisites
 
@@ -8,31 +8,34 @@ This project is a personal initiative to showcase the capabilities of the Dart l
 2. A Google Cloud Project with DocumentAI API enabled
 3. A Service Account with permissions to access DocumentAI
 
-## Setup
-
-1. **Service Account Key**
-    - Place your Service Account key JSON file in the root directory or update the `utils.getSAKey()` method to point to your Service Account key location.
-
 ## Running the Tool
 
-1. **Update Configuration (if needed)**
-    - Update the configuration parameters in the specific command if needed. For example, you might need to update parameters such as `projectId`, `location`, `processorId`, or `fileName` for some commands.
+**DartDocumentAISamples** provides a command-line interface to interact with Google Cloud's DocumentAI.
 
-2. **Execute a Command**
+1. **Place Service Account Key**:
+    - Ensure your Service Account key JSON file is placed in the `assets/` directory.
+
+2. **List Available Commands**:
+    - To view the list of available commands and their descriptions, run:
     ```bash
-    dart your_script.dart <command_name> --<option_name> <option_value>
-    ```
-    Replace `<command_name>` with the command you wish to execute, and use the appropriate options for the command. For example:
-    ```bash
-    dart your_script.dart processDocument --processorId 447bfde754033efd --fileName form.pdf
-    ```
-    You can also get a list of available commands and their descriptions by running:
-    ```bash
-    dart your_script.dart --help
+    dart bin/main.dart --help
     ```
 
-3. **Review the Output**
-    - After executing a command, review the printed results in the terminal.
+3. **Execute a Specific Command**:
+    - Replace `<command_name>` with the command you wish to execute, and use the appropriate options and arguments for the command:
+    ```bash
+    dart bin/main.dart <command_name> --<option_name> <option_value>
+    ```
+    For example, to list available processor types:
+    ```bash
+    dart bin/main.dart listProcessorTypes
+    ```
+
+4. **Get Detailed Help for a Command**:
+    - For more detailed information about a specific command, use:
+    ```bash
+    dart bin/main.dart help <command_name>
+    ```
 
 ## TODOs 
 
@@ -80,3 +83,13 @@ This project is a personal initiative to showcase the capabilities of the Dart l
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. As this project is a work-in-progress, any contribution to help complete the TODOs list would be appreciated.
+
+## Further Reading
+
+For additional information and resources related to this project and DocumentAI, consider visiting the following links:
+
+- [DocumentAI Official Page](https://cloud.google.com/document-ai)
+- [Creating Service Accounts in Google Cloud](https://cloud.google.com/iam/docs/service-accounts-create)
+- [Get Started with Google Skills Boost](https://www.cloudskillsboost.google/)
+- [Generated Dart Libraries for Accessing Google APIs](https://pub.dev/packages/googleapis)
+

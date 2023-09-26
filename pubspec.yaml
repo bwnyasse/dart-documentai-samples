@@ -1,5 +1,5 @@
-name: sample_009_documentai
-description: A sample command-line application.
+name: dart_documentai_samples
+description: A hands-on CLI tool sample showcasing the integration of Dart with Google Cloud's DocumentAI.
 version: 1.0.0
 
 environment:
