@@ -27,7 +27,7 @@ class ProcessDocumentFormParser extends Command {
         help: 'File name for processing.',
       )
       ..addOption('projectId',
-          abbr: 'p',
+          abbr: 'i',
           defaultsTo: 'learning-box-369917',
           help: 'Your Google Cloud Project ID.')
       ..addOption('location',

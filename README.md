@@ -86,6 +86,14 @@ https://github.com/bwnyasse/dart-documentai-samples/assets/5323628/64fc608c-737d
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. As this project is a work-in-progress, any contribution to help complete the TODOs list would be appreciated.
 
+## Acknowledgments
+
+This project draws inspiration from the official samples provided by Google. For a comprehensive list of samples and their descriptions, refer to [Google's DocumentAI Samples](https://cloud.google.com/document-ai/docs/samples).
+
+## License
+
+This project is licensed under the MIT License, which allows for modification, distribution, and private use. Contributions are welcome, and forking the project for your own use is encouraged. For more details, see the [LICENSE](LICENSE) file in the repository.
+
 ## Further Reading
 
 For additional information and resources related to this project and DocumentAI, consider visiting the following links:
