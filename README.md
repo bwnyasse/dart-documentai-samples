@@ -2,6 +2,10 @@
 
 **DartDocumentAISamples**  is a personal initiative to showcase the capabilities of the Dart language in building applications that interact with Google Cloud services. The core of this project revolves around demonstrating how Dart can be seamlessly integrated with Google Cloud's DocumentAI. As a hands-on example, it provides Dart developers with practical insights into processing, managing, and leveraging DocumentAI's powerful features within a Dart-centric workflow. Please note that this is a work-in-progress, and contributions to enhance its offerings are warmly welcomed. For a glimpse of the roadmap, refer to the TODOs section below.
 
+## What is DocumentAI?
+
+DocumentAI is a suite of tools provided by Google Cloud that harnesses the power of machine learning to help organizations automate document processing. It can efficiently parse, structure, and understand vast amounts of documents, from invoices and receipts to contracts and forms. With DocumentAI, you can extract meaningful data, insights, and knowledge from various document types, turning unstructured data into actionable insights. Its capabilities range from Optical Character Recognition (OCR) and form parsing to specialized processors tailored for specific industries and use cases.
+
 ## Prerequisites
 
 1. Dart SDK installed ([Installation Guide](https://dart.dev/get-dart))
