@@ -8,6 +8,7 @@ void main(List<String> arguments) {
       'documentai', 'Document AI Sample CLI Tool for Dart Developers')
     ..addCommand(CreateProcessor())
     ..addCommand(DeleteProcessor())
+    ..addCommand(DisableProcessor())
     ..addCommand(ListProcessorTypes())
     ..addCommand(ProcessDocumentFormParser());
 
