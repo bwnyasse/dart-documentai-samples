@@ -48,7 +48,7 @@ DocumentAI is a suite of tools provided by Google Cloud that harnesses the power
 - [ ] [Cancel a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-cancel-operation?hl=en)
 - [ ] [Change the default processor version](https://cloud.google.com/document-ai/docs/samples/documentai-set-default-processor-version?hl=en)
 - [x] [Create a processor](https://cloud.google.com/document-ai/docs/samples/documentai-create-processor?hl=en)
-- [ ] [Delete a processor](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor?hl=en)
+- [x] [Delete a processor](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor?hl=en)
 - [ ] [Delete a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor-version?hl=en)
 - [ ] [Deploy a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-deploy-processor-version?hl=en)
 - [ ] [Disable a processor](https://cloud.google.com/document-ai/docs/samples/documentai-disable-processor?hl=en)

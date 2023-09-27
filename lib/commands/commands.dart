@@ -1,5 +1,6 @@
 library commands;
 
-export 'create_processor.dart';
-export 'list_process_types.dart';
-export 'process_document_form_parser.dart';
+export 'impl/create_processor.dart';
+export 'impl/delete_processor.dart';
+export 'impl/list_process_types.dart';
+export 'impl/process_document_form_parser.dart';

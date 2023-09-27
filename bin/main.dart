@@ -6,8 +6,9 @@ import 'package:dart_documentai_samples/commands/commands.dart';
 void main(List<String> arguments) {
   final runner = CommandRunner(
       'documentai', 'Document AI Sample CLI Tool for Dart Developers')
-    ..addCommand(ListProcessorTypes())
     ..addCommand(CreateProcessor())
+    ..addCommand(DeleteProcessor())
+    ..addCommand(ListProcessorTypes())
     ..addCommand(ProcessDocumentFormParser());
 
   runner.run(arguments).catchError((error) {
