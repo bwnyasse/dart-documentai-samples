@@ -9,6 +9,7 @@ void main(List<String> arguments) {
     ..addCommand(CreateProcessor())
     ..addCommand(DeleteProcessor())
     ..addCommand(DisableProcessor())
+    ..addCommand(EnableProcessor())
     ..addCommand(ListProcessorTypes())
     ..addCommand(ProcessDocumentFormParser());
 
