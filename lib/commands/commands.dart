@@ -1,5 +1,6 @@
 library commands;
 
+export 'impl/enable_processor.dart';
 export 'impl/create_processor.dart';
 export 'impl/delete_processor.dart';
 export 'impl/disable_processor.dart';
