@@ -1,17 +1,15 @@
 import 'dart:io';
-
 import 'package:args/command_runner.dart';
 import 'package:googleapis/documentai/v1.dart';
-import 'package:dart_documentai_samples/utils/utils.dart' as utils;
 import 'package:dart_documentai_samples/utils/utils.dart';
 
-class ProcessDocumentFormParser extends Command {
+class ProcessDocumentUsingSpecializedProcessor extends Command {
   @override
-  final name = 'processDocumentWithFormParser';
+  final name = 'processDocumentUsingSpecializedProcessor';
   @override
-  final description = 'Process a document using a Form Parser processor';
+  final description = 'Process a document using a Specialized processor';
 
-  ProcessDocumentFormParser() {
+  ProcessDocumentUsingSpecializedProcessor() {
     // Define the command line arguments with their abbreviations, default values, and help descriptions.
     argParser
       ..addOption(
@@ -23,7 +21,7 @@ class ProcessDocumentFormParser extends Command {
       ..addOption(
         'fileName',
         abbr: 'f',
-        defaultsTo: 'form.pdf',
+        defaultsTo: 'model.pdf',
         help: 'File name for processing.',
       )
       ..addOption('projectId',
@@ -54,12 +52,12 @@ class ProcessDocumentFormParser extends Command {
       final documentApi = DocumentApi(client);
 
       // Read the specified PDF file content.
-      final pdfContent = await File(fileName).readAsBytes();
+      final fileContent = await File(fileName).readAsBytes();
 
       // Prepare the request payload for DocumentAI processing.
       final document = GoogleCloudDocumentaiV1RawDocument()
-        ..contentAsBytes = pdfContent
-        ..mimeType = 'application/pdf';
+        ..contentAsBytes = fileContent
+       ..mimeType = 'application/pdf';
 
       final request = GoogleCloudDocumentaiV1ProcessRequest()
         ..rawDocument = document
@@ -87,20 +85,6 @@ class ProcessDocumentFormParser extends Command {
     print('Document processing complete.');
     print('Review status: ${response.humanReviewStatus?.state ?? 'N/A'}\n');
 
-    final documentPages = response.document?.pages ?? [];
-    print("There are ${documentPages.length} page(s) in this document.\n");
-
-    for (var page in documentPages) {
-      print("**** Page ${page.pageNumber} ****\n");
-      final formFields = page.formFields ?? [];
-      print("Found ${formFields.length} form fields:\n");
-      for (var formField in formFields) {
-        final fieldName =
-            formField.fieldName?.textAnchor?.content?.removeNewlines();
-        final fieldValue =
-            formField.fieldValue?.textAnchor?.content?.removeNewlines();
-        print("    - $fieldName: $fieldValue");
-      }
-    }
+    ProcessUtils.printEntities(response);
   }
 }

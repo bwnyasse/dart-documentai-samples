@@ -17,7 +17,7 @@ DocumentAI is a suite of tools provided by Google Cloud that harnesses the power
 **DartDocumentAISamples** provides a command-line interface to interact with Google Cloud's DocumentAI.
 
 1. **Place Service Account Key**:
-    - Ensure your Service Account key JSON file is placed in the `assets/` directory.
+    - Ensure your Service Account key JSON file is placed in the `assets/` directory under the name `sa-keys.json`.
 
 2. **List Available Commands**:
     - To view the list of available commands and their descriptions, run:
@@ -41,46 +41,68 @@ DocumentAI is a suite of tools provided by Google Cloud that harnesses the power
     dart bin/main.dart help <command_name>
     ```
 
-## TODOs 
+## Quick Start with Examples
 
-- [ ] [Process a document using a Document OCR processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-ocr-document?hl=en)
-- [ ] [Process a document using a Specialized processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-specialized-document?hl=en)
-- [ ] [Cancel a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-cancel-operation?hl=en)
-- [ ] [Change the default processor version](https://cloud.google.com/document-ai/docs/samples/documentai-set-default-processor-version?hl=en)
-- [x] [Create a processor](https://cloud.google.com/document-ai/docs/samples/documentai-create-processor?hl=en)
-- [x] [Delete a processor](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor?hl=en)
-- [ ] [Delete a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor-version?hl=en)
-- [ ] [Deploy a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-deploy-processor-version?hl=en)
-- [x] [Disable a processor](https://cloud.google.com/document-ai/docs/samples/documentai-disable-processor?hl=en)
-- [ ] [Enable a processor](https://cloud.google.com/document-ai/docs/samples/documentai-enable-processor?hl=en)
-- [ ] [Evaluate a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-evaluate-processor-version?hl=en)
-- [ ] [Get a list of processors](https://cloud.google.com/document-ai/docs/samples/documentai-list-processors?hl=en)
-- [ ] [Get details about a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-get-operation?hl=en)
-- [ ] [Get evaluation details for a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-get-evaluation?hl=en)
-- [ ] [List evaluations for a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-list-evaluations?hl=en)
-- [ ] [List long-running operations](https://cloud.google.com/document-ai/docs/samples/documentai-list-operations?hl=en)
-- [x] [List processor types](https://cloud.google.com/document-ai/docs/samples/documentai-fetch-processor-types?hl=en)
-- [ ] [Poll a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-poll-operation?hl=en)
-- [x] [Process a document using a Form Parser processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-form-document?hl=en)
-- [ ] [Process a document using a Splitter/Classifier processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-splitter-document?hl=en)
-- [ ] [Quickstart](https://cloud.google.com/document-ai/docs/samples/documentai-quickstart?hl=en)
-- [ ] [Request Human Review of a document](https://cloud.google.com/document-ai/docs/samples/documentai-review-document?hl=en)
-- [ ] [Send a batch process documents request](https://cloud.google.com/document-ai/docs/samples/documentai-batch-process-document?hl=en)
-- [ ] [Send an online processing request](https://cloud.google.com/document-ai/docs/samples/documentai-process-document?hl=en)
-- [ ] [Toolbox - Convert Document to hOCR](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-document-to-hocr?hl=en)
-- [ ] [Toolbox - Convert Document to Vision API Response](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-document-to-vision?hl=en)
-- [ ] [Toolbox - Convert external annotations to Document format](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-convert-external-annotations?hl=en)
-- [ ] [Toolbox - Create document batches](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-create-batches?hl=en)
-- [ ] [Toolbox - Export entities to BigQuery](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-entities-to-bigquery?hl=en)
-- [ ] [Toolbox - Export images](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-export-images?hl=en)
-- [ ] [Toolbox - Output table to Dataframe or CSV](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-table?hl=en)
-- [ ] [Toolbox - Quickstart](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-quickstart?hl=en)
-- [ ] [Toolbox - Split a PDF](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-split-pdf?hl=en)
-- [ ] [Train a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-train-processor-version?hl=en)
-- [ ] [Undeploy a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-undeploy-processor-version?hl=en)
-- [ ] [View available processor versions](https://cloud.google.com/document-ai/docs/samples/documentai-list-processor-versions?hl=en)
-- [ ] [View details about a processor](https://cloud.google.com/document-ai/docs/samples/documentai-get-processor?hl=en)
-- [ ] [View details about a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-get-processor-version?hl=en)
+To help you quickly get started with **DartDocumentAISamples**, we provide an `example.sh` script. This script allows you to easily run specific commands with pre-defined parameters. It's a great way to see the tool in action with minimal setup.
+
+### Using the example.sh Script
+
+1. **Ensure Prerequisites**:
+   - Make sure you have the Dart SDK installed and your Google Cloud Project is set up with the DocumentAI API and a Service Account as described in the Prerequisites section.
+
+2. **Run a Command**:
+   - Use the `example.sh` script followed by the command name to execute a predefined command. For example, to process a document using the Form Parser processor, run:
+     ```bash
+     ./example.sh processDocumentWithFormParser
+     ```
+   - Similarly, to process a document using a Specialized processor, execute:
+     ```bash
+     ./example.sh processDocumentUsingSpecializedProcessor
+     ```
+
+3. **Explore Other Commands**:
+   - The script supports several commands matching the TODOs in our roadmap. Simply replace the command name in the script call with the one you wish to test.
+   
+## TODOs
+
+- [ ] [1- Cancel a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-cancel-operation?hl=en)
+- [x] [2- Create a processor](https://cloud.google.com/document-ai/docs/samples/documentai-create-processor?hl=en)
+- [x] [3- Delete a processor](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor?hl=en)
+- [ ] [4- Delete a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-delete-processor-version?hl=en)
+- [x] [5- Disable a processor](https://cloud.google.com/document-ai/docs/samples/documentai-disable-processor?hl=en)
+- [ ] [6- Deploy a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-deploy-processor-version?hl=en)
+- [ ] [7- Enable a processor](https://cloud.google.com/document-ai/docs/samples/documentai-enable-processor?hl=en)
+- [ ] [8- Evaluate a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-evaluate-processor-version?hl=en)
+- [ ] [9- Get a list of processors](https://cloud.google.com/document-ai/docs/samples/documentai-list-processors?hl=en)
+- [ ] [10- Get details about a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-get-operation?hl=en)
+- [ ] [11- Get evaluation details for a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-get-evaluation?hl=en)
+- [x] [12- List processor types](https://cloud.google.com/document-ai/docs/samples/documentai-fetch-processor-types?hl=en)
+- [ ] [13- List evaluations for a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-list-evaluations?hl=en)
+- [ ] [14- List long-running operations](https://cloud.google.com/document-ai/docs/samples/documentai-list-operations?hl=en)
+- [ ] [15- Poll a long-running operation](https://cloud.google.com/document-ai/docs/samples/documentai-poll-operation?hl=en)
+- [x] [16- Process a document using a Form Parser processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-form-document?hl=en)
+- [ ] [17- Process a document using a Document OCR processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-ocr-document?hl=en)
+- [ ] [18- Process a document using a Specialized processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-specialized-document?hl=en)
+- [ ] [19- Process a document using a Splitter/Classifier processor](https://cloud.google.com/document-ai/docs/samples/documentai-process-splitter-document?hl=en)
+- [ ] [20- Quickstart](https://cloud.google.com/document-ai/docs/samples/documentai-quickstart?hl=en)
+- [ ] [21- Request Human Review of a document](https://cloud.google.com/document-ai/docs/samples/documentai-review-document?hl=en)
+- [ ] [22- Send a batch process documents request](https://cloud.google.com/document-ai/docs/samples/documentai-batch-process-document?hl=en)
+- [ ] [23- Send an online processing request](https://cloud.google.com/document-ai/docs/samples/documentai-process-document?hl=en)
+- [ ] [24- Toolbox - Convert Document to hOCR](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-document-to-hocr?hl=en)
+- [ ] [25- Toolbox - Convert Document to Vision API Response](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-document-to-vision?hl=en)
+- [ ] [26- Toolbox - Convert external annotations to Document format](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-convert-external-annotations?hl=en)
+- [ ] [27- Toolbox - Create document batches](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-create-batches?hl=en)
+- [ ] [28- Toolbox - Export entities to BigQuery](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-entities-to-bigquery?hl=en)
+- [ ] [29- Toolbox - Export images](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-export-images?hl=en)
+- [ ] [30- Toolbox - Output table to Dataframe or CSV](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-table?hl=en)
+- [ ] [31- Toolbox - Quickstart](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-quickstart?hl=en)
+- [ ] [32- Toolbox - Split a PDF](https://cloud.google.com/document-ai/docs/samples/documentai-toolbox-split-pdf?hl=en)
+- [ ] [33- Train a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-train-processor-version?hl=en)
+- [ ] [34- Undeploy a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-undeploy-processor-version?hl=en)
+- [ ] [35- View available processor versions](https://cloud.google.com/document-ai/docs/samples/documentai-list-processor-versions?hl=en)
+- [ ] [36- View details about a processor](https://cloud.google.com/document-ai/docs/samples/documentai-get-processor?hl=en)
+- [ ] [37- View details about a processor version](https://cloud.google.com/document-ai/docs/samples/documentai-get-processor-version?hl=en)
+
 
 ## DEMO
 

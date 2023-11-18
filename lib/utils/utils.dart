@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:googleapis/documentai/v1.dart';
 import 'package:path/path.dart' as p;
 import 'package:googleapis_auth/auth_io.dart' as auth;
@@ -46,4 +47,58 @@ class AuthUtils {
       Platform.environment["FETCHER_SERVICE_IN_DOCKER"] == 'true'
           ? ''
           : 'assets';
+}
+
+class ProcessUtils {
+  // Utility function to print processed document results.
+  static printEntities(GoogleCloudDocumentaiV1ProcessResponse response) {
+    for (var entity in response.document?.entities ?? []) {
+      // Check if the entity is a line item
+      if (entity.type == 'line_item') {
+        print('* Line Item:');
+
+        // Iterate through the properties of the line item
+        for (var property in entity.properties ?? []) {
+          var label = property.type;
+          var value =
+              property.textAnchor != null ? property.textAnchor.content : 'N/A';
+          var conf = (property.confidence * 100).toStringAsFixed(2);
+          print('  - $label: $value (${conf}% confident)');
+        }
+      } else {
+        // Entity type as key
+        var key = entity.type;
+
+        // Extracting text value
+        var textValue =
+            entity.textAnchor != null ? entity.textAnchor.content : '';
+
+        // Confidence value multiplied by 100
+        var conf = (entity.confidence * 100);
+
+        print(
+            '* ${jsonEncode(key)}: ${jsonEncode(textValue)} (${conf.toStringAsFixed(2)}% confident)');
+      }
+    }
+  }
+
+  // Utility function to print processed document results.
+  static printPages(GoogleCloudDocumentaiV1ProcessResponse response) {
+    final documentPages = response.document?.pages ?? [];
+    print("\nThere are ${documentPages.length} page(s) in this document.\n");
+
+    for (var page in documentPages) {
+      print("**** Page ${page.pageNumber} ****\n");
+
+      final formFields = page.formFields ?? [];
+      print("Found ${formFields.length} form fields:\n");
+      for (var formField in formFields) {
+        final fieldName =
+            formField.fieldName?.textAnchor?.content?.removeNewlines();
+        final fieldValue =
+            formField.fieldValue?.textAnchor?.content?.removeNewlines();
+        print("    - $fieldName: $fieldValue");
+      }
+    }
+  }
 }

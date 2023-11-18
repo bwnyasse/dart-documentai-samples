@@ -8,6 +8,7 @@ class DisableProcessor extends Command {
   @override
   final description = 'Disable a processor';
 
+  
   DisableProcessor() {
     // Define the command line arguments with their abbreviations, default values, and help descriptions.
     argParser
